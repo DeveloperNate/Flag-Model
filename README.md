@@ -41,3 +41,100 @@ Attribute Information:
 
 Using the features above, a model will be created to predict the religion of a country from the characteristics of the flag.
 
+
+<h2>Exploring the Data</h2>
+
+Before a model is created an examination of the features was done. During the examination, a number of necessary operations were done to the dataset to prepare for fitting in a model. These included :
+
+    Removing the irrelevant features : "Name","Zone","Area","Population","Language"
+
+These features were removed as even though the features might have a high correlation with the country's religion, this information will not be avilable in future usage of the model.Once the irrelevant data was removed, further exploring of the data occured by using data visulations.
+
+<img src="data_first.JPG">
+
+From the data, we can see that there is quite a high bias towards Christian flags. The charts also show that the other dominant flags are Christian,Catholic and Muslim. However, interestingly the Ethnic flags have a high bias in African countries. Due to the high bias, it could potential indicate an identifiable pattern that could be found among the flags despite the low amount of data collected.
+
+Further feature exploration will be conducted to see the correlation between the features and each religion.
+
+<img src="data_two.JPG">
+
+From the data, we can that certain features correlate with certain religion more than others.
+
+1) Catholic : number of bars
+
+2) Christian : Crosses, Saltires, quarters
+
+3) Muslim : Crescents, Green
+
+4) Buddhist : Circles, Orange
+
+5) Ethnic : Green
+
+However, due to the limited data and therefore no recognisable patterns with flags belonging to Marxist, Hindu or others, a decision was made to combine the Marxist and Hindu flags into the others category. We will then examine the data to see the identified patterns that been discoved by the exploration while also further investigating the new 'other' section to see if a pattern can be found within it.
+
+<img src="groupby.JPG">
+
+From the table above, we can that the number of bars does offer us some value in our prediction model. However, the number of bars on the flag could correlate more with its continent than its religion. As a lot of Catholic countries are in Europe and there are a lot of European flags that have 3 bars. This could be problematic as there is a high number of Catholic countries in South America, which may not have the same historic flag design as European countries.
+
+<img src="groupby2.JPG">
+
+From the data above, we can see that the Number of Bar has a higher correlation with the Continent than the religion, as the majority of Cathloic countries in South America do not use bars on their flag.
+
+The next step was to examine the correlation between the features and the religion again with the newly added section.
+
+<img src="data_three.JPG">
+
+
+The next stage for the data is to explore the results of the data in a model and examine whether other changes can be made to the data.
+
+<h2> Exploring the Algorithms </h2>
+
+A range of algorithms were selected to be fitted with our data.
+
+<img src="model.JPG">
+
+From the graph above, we can see the best performing algorithm. The results of the algorithm was then examined to see if changes could be made to the data.
+
+<img src="matrix.JPG">
+
+From the confusion martix, we can see that a number of issues with the model including :
+
+1)the Buddhist's flags are being place in mulitple incorrect categories.
+
+2) The Ethnic and Muslim Flags are being wrongly classified together.
+
+3) The other Flags is being wrongly classified with the Muslim flags.
+
+To try and create a more accurate model, I will add the Ethnic and Buddhist's flags into the other section.
+
+
+
+<img src="model2.JPG">
+<img src="matrix2.JPG">
+
+
+
+From the graph above, we can see that the simplfication of the data has not made the model more effective, as the increase other category is now making False Negatives in both the Christian and Catholic groups.
+
+<img src="date_four.JPG">
+
+
+
+After experimenting with reducing the amount of variable that have a high correlatation between the sections : Others and Christians / Others and Catholic, the model was unable to be improved.
+
+<h2>Optimising the Model</h2>
+
+The next stage is to improve the model by tuning the parameters so it matches the data better.
+
+<img src="best.JPG">
+<img src="best2.JPG">
+
+
+<h2>Evaluating the model </h2>
+
+It is quite clear to see that without extra data, no effective model can be produced to meet the aims of the project. The potential routes that we can take are:
+
+1) Get a greater sample size
+
+2) Reduce the categories and features to a point whether there are more obvious identifiers.
+
