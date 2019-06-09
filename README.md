@@ -1,6 +1,6 @@
 # Project description
 
-This project will be using the UCI Flag dataset, which can be found from the website below.
+The full code for this project can be found in the "flag.ipynb" file.This project will be using the UCI Flag dataset, which can be found from the website below.
 
 https://archive.ics.uci.edu/ml/datasets/Flags
 
